@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="shot_em:jar">
+    <output-path>$USER_HOME$/Desktop/minecraft/plugins</output-path>
+    <root id="archive" name="shot_em.jar">
+      <element id="module-output" name="shot_em" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/commons-io/commons-io/2.11.0/commons-io-2.11.0.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

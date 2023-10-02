@@ -1,0 +1,38 @@
+db:
+  username: ""
+  password: ""
+  host: ""
+  port: 3306
+  database: ""
+
+# (ex: 7D_)
+# 7D_ will be one of the target NPCs.
+targets:
+  - "Pieter"
+  - "Jeffrey"
+  - "Notch"
+  - "7D_"
+  - "DevQuartz"
+  - "prplz"
+
+# (ex: 10: 1)
+# When the user is under his tenth shot, he will be rewarded 1 point.
+points:
+  10: 1
+  15: 3
+  20: 10
+  25: 15
+  30: 20
+  100: 25
+
+# (ex: 5: 7)
+# When the user is under his fifth shot, the target will be 7 blocks away.
+distance:
+  5: 7
+  7: 11
+  14: 16
+  20: 24
+  26: 30
+  30: 35
+  40: 40
+  100: 50

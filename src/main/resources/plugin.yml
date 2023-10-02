@@ -1,0 +1,5 @@
+name: Shot Em
+version: '${project.version}'
+main: me.quartz.shot_em.ShotEm
+softdepend: [PlaceholderAPI]
+depend: [Citizens]

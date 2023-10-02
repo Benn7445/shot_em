@@ -1,0 +1,5 @@
+name: Shot Em
+version: '1.0-SNAPSHOT'
+main: me.quartz.shot_em.ShotEm
+depend:
+  - Citizens
