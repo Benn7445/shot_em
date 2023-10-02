@@ -3,6 +3,7 @@ import me.quartz.shot_em.ShotEm;
 import me.quartz.shot_em.game.Game;
 import me.quartz.shot_em.localPlayer.LocalPlayer;
 import org.bukkit.Bukkit;
+import org.bukkit.Sound;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -24,6 +25,7 @@ public class ProjectileLaunchListener implements Listener {
                         game.setShot(true);
                         Bukkit.getScheduler().scheduleSyncDelayedTask(ShotEm.getInstance(), () -> {
                             if (game.hasShot()) {
+                                player.playSound(player.getLocation(), Sound.ANVIL_LAND, 1, 1);
                                 game.endGame();
                                 LocalPlayer localPlayer = ShotEm.getInstance().getLocalPlayerManager().getLocalPlayer(player);
                                 localPlayer.removePoints();
