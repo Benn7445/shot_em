@@ -22,7 +22,7 @@ public class LocalPlayer {
     public LocalPlayer(Player player, int points, int highScore, int timePlayed) {
         this.uuid = player.getUniqueId();
         this.points = points;
-        this.highScore = points;
+        this.highScore = highScore;
         this.timePlayed = timePlayed;
     }
 

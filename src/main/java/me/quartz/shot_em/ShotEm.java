@@ -103,6 +103,7 @@ public final class ShotEm extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new PlayerDropItemListener(), this);
         Bukkit.getPluginManager().registerEvents(new WeatherChangeListener(), this);
         Bukkit.getPluginManager().registerEvents(new BlockBreakListener(), this);
+        Bukkit.getPluginManager().registerEvents(new PlayerInteractListener(), this);
     }
 
     /*

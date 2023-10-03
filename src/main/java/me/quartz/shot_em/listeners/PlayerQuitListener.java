@@ -1,6 +1,7 @@
 package me.quartz.shot_em.listeners;
 
 import me.quartz.shot_em.ShotEm;
+import me.quartz.shot_em.game.Game;
 import me.quartz.shot_em.localPlayer.LocalPlayer;
 import org.bukkit.Bukkit;
 import org.bukkit.World;
@@ -20,5 +21,7 @@ public class PlayerQuitListener implements Listener {
         }, 5);
         LocalPlayer localPlayer = ShotEm.getInstance().getLocalPlayerManager().getLocalPlayer(player);
         ShotEm.getInstance().getMysqlManager().saveLocalPlayer(localPlayer);
+        Game game = ShotEm.getInstance().getGameManager().getGame(player);
+        game.endGame();
     }
 }

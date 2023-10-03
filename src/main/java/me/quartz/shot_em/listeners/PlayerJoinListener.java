@@ -8,6 +8,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 public class PlayerJoinListener implements Listener {
 
@@ -42,6 +43,11 @@ public class PlayerJoinListener implements Listener {
         bow.addEnchantment(Enchantment.DURABILITY, 3);
         player.getInventory().setItem(0, bow);
         player.getInventory().setItem(1, new ItemStack(Material.ARROW, 1));
+        ItemStack leave = new ItemStack(Material.BED);
+        ItemMeta itemMeta = leave.getItemMeta();
+        itemMeta.setDisplayName(ChatColor.RED + "Leave");
+        leave.setItemMeta(itemMeta);
+        player.getInventory().setItem(8, leave);
     }
 
     /*
