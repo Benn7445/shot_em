@@ -23,15 +23,8 @@ public class ScoreManager {
         LocalPlayer localPlayer = ShotEm.getInstance().getLocalPlayerManager().getLocalPlayer(player);
         Game game = ShotEm.getInstance().getGameManager().getGame(player);
         ScoreHelper helper = ScoreHelper.createScore(player);
-        helper.setTitle("&a&lShotEm");
-        helper.setSlot(8, "&6&lScore");
-        helper.setSlot(7, (game != null ? game.getScore() : 0) + "");
-        helper.setSlot(6, " ");
-        helper.setSlot(5, "&6&lPersonal");
-        helper.setSlot(4, "Points: " + ChatColor.YELLOW + localPlayer.getPoints());
-        helper.setSlot(3, "Best Score: " + ChatColor.YELLOW + localPlayer.getHighScore());
-        helper.setSlot(2, " ");
-        helper.setSlot(1, "&cminebadmc.com");
+        helper.setTitle(ShotEm.getInstance().getConfig().getString("scoreboard-title"));
+        updateConfigScore(localPlayer, game, helper);
     }
 
     public void updateScoreboard(Player player) {
@@ -39,9 +32,19 @@ public class ScoreManager {
         Game game = ShotEm.getInstance().getGameManager().getGame(player);
         if(ScoreHelper.hasScore(player)) {
             ScoreHelper helper = ScoreHelper.getByPlayer(player);
-            helper.setSlot(7, (game != null ? game.getScore() : 0) + "");
-            helper.setSlot(4, "Points: " + ChatColor.YELLOW + localPlayer.getPoints());
-            helper.setSlot(3, "Best Score: " + ChatColor.YELLOW + localPlayer.getHighScore());
+            updateConfigScore(localPlayer, game, helper);
+        }
+    }
+
+    private void updateConfigScore(LocalPlayer localPlayer, Game game, ScoreHelper helper) {
+        int i = ShotEm.getInstance().getConfig().getStringList("scoreboard").size();
+        for(String s : ShotEm.getInstance().getConfig().getStringList("scoreboard")) {
+            i = i-1;
+            helper.setSlot(i, s.
+                    replace("%score%", (game != null ? game.getScore() : 0) + "").
+                    replace("%points%", localPlayer.getPoints() + "").
+                    replace("%highscore%", localPlayer.getHighScore() + "")
+            );
         }
     }
 }

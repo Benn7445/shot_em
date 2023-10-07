@@ -36,3 +36,15 @@ distance:
   30: 35
   40: 40
   100: 50
+
+# The in-game scoreboard
+scoreboard-title: "&c&lShot Em"
+scoreboard:
+  - "&6&lScore"
+  - "%score%"
+  - " "
+  - "&6&lPersonal"
+  - "Points: &e%points%"
+  - "Best Score: &e%highscore%"
+  - " "
+  - "&cminebadmc.com"

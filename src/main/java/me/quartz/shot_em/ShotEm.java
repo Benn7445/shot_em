@@ -75,12 +75,15 @@ public final class ShotEm extends JavaPlugin {
         instance = this;
         saveDefaultConfig();
         Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "npc remove all");
+        this.getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
     }
 
     /*
     Initialize all the managers
      */
-    private void registerManagers() {
+    private void
+
+    registerManagers() {
         mysqlManager = new MySQLManager();
         worldsManager = new WorldManager();
         localPlayerManager = new LocalPlayerManager();
@@ -104,6 +107,8 @@ public final class ShotEm extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new WeatherChangeListener(), this);
         Bukkit.getPluginManager().registerEvents(new BlockBreakListener(), this);
         Bukkit.getPluginManager().registerEvents(new PlayerInteractListener(), this);
+        Bukkit.getPluginManager().registerEvents(new BlockPlaceListener(), this);
+        Bukkit.getPluginManager().registerEvents(new FoodLevelChangeListener(), this);
     }
 
     /*
@@ -127,5 +132,6 @@ public final class ShotEm extends JavaPlugin {
             worldsManager.unloadWorld(world);
         }
         Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "npc remove all");
+        this.getServer().getMessenger().unregisterOutgoingPluginChannel(this);
     }
 }
