@@ -9,5 +9,4 @@ Client wanted it to integrate with Citizens.
 Game starts again from the moment you missed an NPC.
 
 ## Current State
-![](https://im.ezgif.com/tmp/ezgif-1-99bbaad464.gif)
 ![](https://im.ezgif.com/tmp/ezgif-1-f01d75e6e7.gif)
